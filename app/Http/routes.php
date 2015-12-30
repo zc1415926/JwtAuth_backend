@@ -14,8 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::post('api/register', 'TokenAuthController@register');
-Route::post('api/authenticate', 'TokenAuthController@authenticate');
-Route::get('api/authenticate/user', 'TokenAuthController@getAuthenticatedUser');
-
-Route::resource('api/todo', 'TodoController');
+Route::group(['prefix' => 'api'], function()
+{
+    Route::resource('authenticate', 'AuthenticateController', ['only' => ['index']]);
+    Route::post('authenticate', 'AuthenticateController@authenticate');
+});
