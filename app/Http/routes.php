@@ -14,8 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::group(['prefix' => 'api'], function()
+Route::group(['prefix' => 'api', 'middleware' => 'cors'], function()
 {
     Route::resource('authenticate', 'AuthenticateController', ['only' => ['index']]);
-    Route::post('authenticate', 'AuthenticateController@authenticate');
+
 });
+Route::post('api/authenticate', [
+    'middleware' => 'cors',
+    'uses' => 'AuthenticateController@authenticate']);
