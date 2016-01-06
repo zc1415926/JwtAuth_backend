@@ -17,10 +17,6 @@ env:
     - SESSION_DRIVER=file
     - QUEUE_DRIVER=sync
 
-install:
-  - pip install -r travis/requirements.txt
-  - pip install coveralls
-
 before_script:
   - composer self-update
   - composer install --prefer-source --no-interaction --dev
