@@ -3,6 +3,20 @@ language: php
 php:
 - 5.5
 
+env:
+  global:
+    - APP_ENV=local
+    - APP_DEBUG=true
+    - APP_KEY=wolWin0qMnq1SGBrpwbPhHnz1qO4yh1o
+
+    - DB_HOST=127.0.0.1
+    - DB_DATABASE=authtodo
+    - DB_USERNAME=travis
+
+    - CACHE_DRIVER=file
+    - SESSION_DRIVER=file
+    - QUEUE_DRIVER=sync
+
 before_script:
   - composer self-update
   - composer install --prefer-source --no-interaction --dev
