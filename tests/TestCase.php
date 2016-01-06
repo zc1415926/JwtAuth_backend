@@ -57,6 +57,11 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase
         return $this->see('"'.$entity.'":');
     }
 
+    public function donSeeJsonKey($entity)
+    {
+        return $this->dontSee('"'.$entity.'":');
+    }
+
     public function seeJsonValue($value)
     {
         return $this->see('"'.$value.'"');
