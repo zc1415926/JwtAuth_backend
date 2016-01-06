@@ -24,6 +24,7 @@ install:
 before_script:
   - composer self-update
   - composer install --prefer-source --no-interaction --dev
+  - composer require satooshi/php-coveralls
   - mysql -e 'create database authtodo;'
   - php artisan migrate
   - php artisan db:seed
@@ -32,4 +33,4 @@ script:
   - vendor/bin/phpunit
 
 after_success:
-  - coveralls
+  - travis_retry php vendor/bin/coveralls
