@@ -17,6 +17,15 @@ env:
     - SESSION_DRIVER=file
     - QUEUE_DRIVER=sync
 
+    - MAIL_DRIVER=smtp
+    - MAIL_HOST=mailtrap.io
+    - MAIL_PORT=25
+    - MAIL_ADDRESS=from@example.com
+    - MAIL_NAME=mailtrap.io
+    - MAIL_USERNAME=5472474fab90ba6bc
+    - MAIL_PASSWORD=acf6d01b20bb28
+    - MAIL_ENCRYPTION=null
+
 before_script:
   - composer self-update
   - composer install --prefer-source --no-interaction --dev
