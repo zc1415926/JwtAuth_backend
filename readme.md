@@ -8,3 +8,7 @@ This project is based on the tutorial [Token-Based Authentication for AngularJS 
 ## Automated Testing with Travis CI
 
 This is the first project which I use Travis CI. **Exciting!** Now, I'm looking more professional!
+
+## Test Coverage Report by Coveralls
+
+I use Coveralls to get the test coverage report. The offical document is a little obscure, I spend a bit more time to study the usage.
